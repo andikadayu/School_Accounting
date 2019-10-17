@@ -37,18 +37,19 @@ include '../controller/koneksi.php'
 <body class="hold-transition skin-blue sidebar-mini fixed">
   <div class="halaman">
     <div class="wrapper">
-
+      <!-- Memanggil Navbar -->
       <?php include 'component/navbar.php' ?>
       <!-- Left side column. contains the logo and sidebar -->
+      <!-- Memanggil Sidebar -->
       <?php include 'component/sidebar.php' ?>
-
+      
       <div class="content-wrapper" id="content_web">
         
 
         
       </div>
       <!-- /.content-wrapper -->
-
+      <!-- Memanggil Footer -->
       <?php include 'component/footer.php' ?>
     </div>
   </div>
@@ -69,6 +70,8 @@ include '../controller/koneksi.php'
 
   <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <script>
     $(function () {

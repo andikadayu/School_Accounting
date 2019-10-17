@@ -34,8 +34,12 @@
                     <th>NO</th>
                     <th>Id</th>
                     <th>Nama Guru</th>
+                    <th>JK</th>
+                    <th>TTL</th>
+                    <th>Agama</th>
+                    <th>Alamat</th>
                     <th>Jabatan</th>
-                    <th>IMAGE</th>
+                    <th>Image</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -50,6 +54,10 @@
                       <td><?php echo $i++ ?></td>
                       <td><?php echo $row['id']; ?></td>
                       <td><?php echo $row['nama_guru']; ?></td>
+                      <td><?php echo $row['jenis_kelamin']; ?></td>
+                      <td><?php echo $row['tempat_lahir'];?>,<?php echo $row['tgl_lahir'];?></td>
+                      <td><?php echo $row['agama']; ?></td>
+                      <td><?php echo $row['alamat']; ?></td>
                       <td><?php echo $row['jabatan']; ?></td>
                       <td><?php echo $row['image']; ?></td>
                       <td class="w-b">
