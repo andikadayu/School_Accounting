@@ -8,7 +8,6 @@
             <li class="active">Master Guru</li>
           </ol>
         </section>
-
         <section class="content">
           <div class="box box-solid box-info">
             <div class="box-header">
@@ -32,7 +31,6 @@
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>Id</th>
                     <th>Nama Guru</th>
                     <th>JK</th>
                     <th>TTL</th>
@@ -52,7 +50,6 @@
                   while ($row = mysqli_fetch_assoc($key)) { ?>  
                     <tr>
                       <td><?php echo $i++ ?></td>
-                      <td><?php echo $row['id']; ?></td>
                       <td><?php echo $row['nama_guru']; ?></td>
                       <td><?php echo $row['jenis_kelamin']; ?></td>
                       <td><?php echo $row['tempat_lahir'];?>,<?php echo $row['tgl_lahir'];?></td>
