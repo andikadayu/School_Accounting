@@ -1,84 +1,80 @@
 <section class="content-header">
-					<h1>
-						Dashboard
-					</h1>
-					<ol class="breadcrumb">
-						<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-						<li class="active">Dashboard</li>
-					</ol>
-				</section>
+	<h1>
+		Dashboard
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">Dashboard</li>
+	</ol>
+</section>
 
-				<section class="content">
+<section class="content">
 
-					<div class="card">
-						<div class="row">
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="info-box">
-									<span class="info-box-icon bg-aqua"><i class="fa fa-gavel"></i></span>
+	<div class="card">
+		<div class="row">
+			<div class="col-lg-3 col-xs-6">
+				<!-- small box -->
+				<div class="small-box bg-green">
+					<div class="inner">
+						<h3 id="jml_guru"><sup style="font-size: 20px"></sup></h3>
 
-									<div class="info-box-content">
-										<span class="info-box-text">Jumlah Guru</span>
-										<span class="info-box-number">...<small>guru</small></span>
-									</div>
-									<!-- /.info-box-content -->
-								</div>
-								<!-- /.info-box -->
-							</div>
-							<!-- /.col -->
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="info-box">
-									<span class="info-box-icon bg-green"><i class="fa fa-graduation-cap"></i></span>
-
-									<div class="info-box-content">
-										<span class="info-box-text">Jumlah Siswa</span>
-										<span class="info-box-number">... <small>siswa</small></span>
-									</div>
-									<!-- /.info-box-content -->
-								</div>
-								<!-- /.info-box -->
-							</div>
-							<!-- /.col -->
-
-							<!-- fix for small devices only -->
-							<div class="clearfix visible-sm-block"></div>
-
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="info-box">
-									<span class="info-box-icon bg-yellow"><i class="fa fa-users"></i></span>
-
-									<div class="info-box-content">
-										<span class="info-box-text">Jumlah Pengguna</span>
-										<span class="info-box-number">...<small>pengguna</small></span>
-									</div>
-									<!-- /.info-box-content -->
-								</div>
-								<!-- /.info-box -->
-							</div>
-							<!-- /.col -->
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="info-box">
-									<span class="info-box-icon bg-red"><i class="fa fa-money"></i></span>
-
-									<div class="info-box-content">
-										<span class="info-box-text">Jumlah Dana</span>
-										<span class="info-box-number">...</span>
-									</div>
-									<!-- /.info-box-content -->
-
-								</div>
-								<!-- /.info-box -->
-							</div>
-						<!-- <button class="btn btn-primary" onclick="pindah()">Tes</button> -->
-							<!-- /.col -->
-						</div>
-
+						<p>Jumlah Guru</p>
 					</div>
-				</section>
+					<div class="icon">
+						<i class="fa fa-graduation-cap"></i>
+					</div>
+					<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<!-- small box -->
+				<div class="small-box bg-yellow">
+					<div class="inner">
+						<h3 id="jml_siswa"><sup style="font-size: 20px">%</sup></h3>
+						
+						<p>Jumlah Siswa</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-users"></i>
+					</div>
+					<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<!-- small box -->
+				<div class="small-box bg-red">
+					<div class="inner">
+						<h3 id="jml_admin"><sup style="font-size: 20px">%</sup></h3>
 
+						<p>Jumlah Admin</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-user-secret"></i>
+					</div>
+					<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<!-- small box -->
+				<div class="small-box bg-blue">
+					<div class="inner">
+						<h3>53<sup style="font-size: 20px">%</sup></h3>
+
+						<p>Saldo Dana</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-money"></i>
+					</div>
+					<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <script>
-  $(function () {
-      $('#datatables').DataTable();
-    });
+	$(function () {
+		$('#datatables').DataTable();
+	});
 </script>
 <script>
 	$('#dashboardd').addClass('active');
@@ -87,4 +83,20 @@
 	$('#m_guru').removeClass('active');
 	$('#m_siswa').removeClass('active');
 	$('#m_admin').removeClass('active');
+</script>
+
+<script>
+	$.ajax({
+		url: "ajax/dashboard.php",
+		method:"get",
+		type:"json",
+		success:function (data) {
+			// https://jonsuh.com/blog/convert-loop-through-json-php-javascript-arrays-objects/
+		 	var JSONObject = JSON.parse(data);
+		  	$('#jml_guru').text(JSONObject["jml_guru"]['jumlah']),
+			$('#jml_admin').text(JSONObject["jml_admin"]['jumlah']),
+			$('#jml_siswa').text(JSONObject["jml_siswa"]['jumlah'])
+		}
+	})
+	
 </script>
