@@ -174,6 +174,7 @@
   });
 </script>
 <script>
+  $('#title').text("School-Accounting | Master Guru");
   $('#m_guru').addClass('active');
   $('#dashboardd').removeClass('active');
   $('#dana').removeClass('active');

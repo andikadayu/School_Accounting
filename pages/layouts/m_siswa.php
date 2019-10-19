@@ -133,6 +133,7 @@
   });
 </script>
 <script>
+  $('#title').text("School-Accounting | Master Siswa");
   $('#m_siswa').addClass('active');
   $('#dashboardd').removeClass('active');
   $('#dana').removeClass('active');

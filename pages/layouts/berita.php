@@ -78,6 +78,7 @@
     });
 </script>
 <script>
+		$('#title').text("School-Accounting | Berita");
 	  	$('#berita').addClass('active');
 	  	$('#dashboardd').removeClass('active');
 	  	$('#dana').removeClass('active');

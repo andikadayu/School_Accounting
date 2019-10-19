@@ -78,6 +78,7 @@
 	});
 </script>
 <script>
+	$('#title').text("School-Accounting | Dana");
 	$('#dana').addClass('active');
 	$('#dashboardd').removeClass('active');
 	$('#berita').removeClass('active');

@@ -31,7 +31,7 @@
 				<div class="small-box bg-yellow">
 					<div class="inner">
 						<h3 id="jml_siswa"><sup style="font-size: 20px">%</sup></h3>
-						
+
 						<p>Jumlah Siswa</p>
 					</div>
 					<div class="icon">
@@ -77,6 +77,7 @@
 	});
 </script>
 <script>
+	$('#title').text("School-Accounting | Dashboard");
 	$('#dashboardd').addClass('active');
 	$('#berita').removeClass('active');
 	$('#dana').removeClass('active');
