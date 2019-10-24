@@ -30,7 +30,7 @@
       <table id="datatables" class="table table-bordered table-striped">  
         <thead>
           <tr>
-            <th>Id Siswa</th>
+            <th>No</th>
             <th>Nama Siswa</th>
             <th>Kelas </th>
             <th>Image</th>
@@ -50,7 +50,7 @@
               <td><?php echo $row['kelas']; ?></td>
               <td><?php echo $row['image']; ?></td>
               <td class="w-b">
-                <button type="button" title="Edit Siswa" class="btn btn-success" data-toggle="modal" data-target="#editSiswa">
+                <button type="button" title="Edit Siswa" class="btn btn-success" data-toggle="modal" data-target="#editSiswa" onclick="get_data('<?php echo $row['id_siswa']; ?>','<?php echo $row['nama_siswa']; ?>','<?php echo $row['kelas']; ?>','<?php echo $row['image']; ?>');">
                   <span>
                     <i class="fa fa-edit"></i>
                   </span>
@@ -96,12 +96,44 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="editSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Siswa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="edit_siswa" method="post" enctype="multipart/form-data">
+          <input type="text" name="id_siswa" hidden id="edit_id_siswa"> 
+          <label class="form-group">Nama Siswa</label>
+          <input type="text" name="nama_siswa" id="edit_nama_siswa" class="form-control"> 
+          <label class="form-group">Kelas</label>
+          <input type="text" name="kelas" id="edit_kelas" class="form-control">
+          <label class="form-group">Photo</label>
+          <input type="file" name="foto"  id="edit_image" class="form-control">
+          <small><i>if you not change,let blank this</i></small>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="sv_add" onclick="valid_edit();">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $(function () {
     $('#datatables').DataTable();
   });
 </script>
 <script>
+  $('#title').text("School-Accounting | Master Siswa");
   $('#m_siswa').addClass('active');
   $('#dashboardd').removeClass('active');
   $('#dana').removeClass('active');
@@ -122,7 +154,6 @@
       contentType : false,
       data : new FormData($('#add_siswa')[0]),
       success: function(data){
-
         swal("Success", "Data Added Success", "success").then((value)=>{
           location.reload();
         });
@@ -131,12 +162,10 @@
         swal("Failed","Data Added Failed","error");
       }
     })
-
    }else{
     swal("Attention!", "You must Complete Form ", "error");
   }
 }
-
 function delete_siswa(id) {
  swal({
   title: "Are you sure?",
@@ -170,4 +199,36 @@ function delete_siswa(id) {
   }
 });
 }
+</script>
+<script>
+  function get_data(id,nama_siswa,kelas,image) {
+    $('#edit_id_siswa').val(id);
+    $('#edit_nama_siswa').val(nama_siswa);
+    $('#edit_kelas').val(kelas);
+  }
+
+  function valid_edit() {
+    var namas=document.getElementById('edit_nama_siswa').value;
+    var kelass=document.getElementById('edit_kelas').value;
+    if(namas!=''&&kelass!=''){
+      $.ajax({
+        url:"ajax/update_siswa.php",
+        type : "post",
+        processData: false,
+        contentType : false,
+        data : new FormData($('#edit_siswa')[0]),
+        success:function (date) {
+          swal("Success", "Data Changed Success", "success").then((value)=>{
+            location.reload();
+          });
+        },
+        error:function (date) {
+          swal('Failed','Data Changed Failed','error');
+        }
+
+      })
+    }else{
+      swal('Attention','Nama and Kelas must filled','error');
+    }
+  }
 </script>

@@ -139,6 +139,7 @@
   });
 </script>
 <script>
+  $('#title').text("School-Accounting | Master Admin");
   $('#m_admin').addClass('active');
   $('#dashboardd').removeClass('active');
   $('#dana').removeClass('active');
