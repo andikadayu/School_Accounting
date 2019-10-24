@@ -58,7 +58,7 @@
 				<!-- small box -->
 				<div class="small-box bg-blue">
 					<div class="inner">
-						<h3>53<sup style="font-size: 20px">%</sup></h3>
+						<h3 id="jml_dana"><sup style="font-size: 20px">Rp.</sup></h3>
 
 						<p>Saldo Dana</p>
 					</div>
@@ -96,7 +96,8 @@
 		 	var JSONObject = JSON.parse(data);
 		  	$('#jml_guru').text(JSONObject["jml_guru"]['jumlah']),
 			$('#jml_admin').text(JSONObject["jml_admin"]['jumlah']),
-			$('#jml_siswa').text(JSONObject["jml_siswa"]['jumlah'])
+			$('#jml_siswa').text(JSONObject["jml_siswa"]['jumlah']),
+			$('#jml_dana').text("Rp."+JSONObject["jml_dana"]['nominal'])
 		}
 	})
 	
