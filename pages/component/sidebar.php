@@ -4,7 +4,7 @@
 					<!-- Sidebar user panel -->
 					<div class="user-panel">
 						<div class="pull-left image">
-							<img src="../../dist/img/avatar5.png" class="img-circle" alt="User Image">
+							<img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">
 						</div>
 						<div class="pull-left info">
 							<p>School-Accounting</p>
@@ -57,6 +57,11 @@
 						<li class="klik_menu" id="berita">
 							<a>
 								<i class="fa fa-newspaper-o"></i> <span>Berita</span>
+							</a>
+						</li>
+						<li class="klik_menu" id="logout">
+							<a>
+								<i class="fa fa-sign-out"></i> <span>Logout</span>
 							</a>
 						</li>
 					</ul>
