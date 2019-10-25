@@ -1,5 +1,9 @@
 <?php 
-include '../controller/koneksi.php'
+include '../controller/koneksi.php';
+session_start();
+if($_SESSION['user'] == null || $_SESSION['user'] == ''){
+  header('location:index.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
