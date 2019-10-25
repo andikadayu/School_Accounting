@@ -4,11 +4,18 @@
 					<!-- Sidebar user panel -->
 					<div class="user-panel">
 						<div class="pull-left image">
-							<img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">
+							<?php 
+								if($_SESSION['profile'] == null || $_SESSION == ''){
+									echo '<img src="../dist/img/avatar5.png" class="img-circle" alt="User Image">';
+								}else{
+									echo '<img src="../image/admin/'.$_SESSION["profile"].'" class="img-circle" alt="User Image">';
+								}
+
+							 ?>
 						</div>
 						<div class="pull-left info">
-							<p>School-Accounting</p>
-							<small>Admin</small>
+							<p><?php echo $_SESSION['nama']; ?></p>
+							<small>Online</small>
 						</div>
 					</div>
 					<!-- search form -->

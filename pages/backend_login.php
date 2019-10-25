@@ -14,7 +14,9 @@
 		if($data){
 			$_SESSION['login'] = true;
 			$_SESSION['user'] = $user;
-			
+			$_SESSION['nama'] = $data['nama'];
+			$_SESSION['profile']=$data['profile']; 
+
 			header('location: master_layout.php');
 		}else{
 			header('Location: index.php?p=salah lubang kali mas??!!');
