@@ -37,7 +37,6 @@
             <th>Agama</th>
             <th>Alamat</th>
             <th>Jabatan</th>
-            <th>Image</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -56,7 +55,6 @@
               <td><?php echo $row['agama']; ?></td>
               <td><?php echo $row['alamat']; ?></td>
               <td><?php echo $row['jabatan']; ?></td>
-              <td><?php echo $row['image']; ?></td>
               <td class="w-b">
                 <button type="button" title="Edit User" class="btn btn-success" data-toggle="modal" data-target="#editGuru" onclick="get_data('<?php echo $row['id']; ?>','<?php echo $row['nama_guru']; ?>','<?php echo $row['jenis_kelamin']; ?>','<?php echo $row['tgl_lahir']; ?>','<?php echo $row['tempat_lahir']; ?>','<?php echo $row['agama']; ?>','<?php echo $row['alamat']; ?>','<?php echo $row['jabatan']; ?>','<?php echo $row['image']; ?>');">
                   <span>

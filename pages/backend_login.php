@@ -19,9 +19,9 @@
 
 			header('location: master_layout.php');
 		}else{
-			header('Location: index.php?p=salah lubang kali mas??!!');
+			header('Location: index.php?p=USERNAME/PASSWORD WRONG');
 		}
 	}else{
-		header('Location: index.php?p=itu lubangnya jangan kosong ya :*');
+		header('Location: index.php?p=You must Complete Form');
 	}
 ?>

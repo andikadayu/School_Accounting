@@ -34,7 +34,7 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Masukinnya Pelan Pelan ya :*</p>
+      <p class="login-box-msg">Welcome to School Accounting</p>
 
       <form action="backend_login.php" method="post">
         <div class="form-group has-feedback">

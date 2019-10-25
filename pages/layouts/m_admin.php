@@ -35,7 +35,6 @@
             <th>Nama</th>
             <th>Username </th>
             <th>Password</th>
-            <th>Image</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -51,7 +50,6 @@
               <td><?php echo $row['nama']; ?></td>
               <td><?php echo $row['username']; ?></td>
               <td><?php echo $row['password']; ?></td>
-              <td><?php echo $row['profile']; ?></td>
               <td class="w-b">
                 <button type="button" title="Edit Admin" class="btn btn-success" data-toggle="modal" data-target="#editAdmin" onclick="get_data('<?php echo $row['id_admin']; ?>','<?php echo $row['nama']; ?>','<?php echo $row['username']; ?>','<?php echo $row['password']; ?>','<?php echo $row['profile']; ?>');">
                   <span>
