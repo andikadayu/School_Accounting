@@ -99,6 +99,9 @@ include '../controller/koneksi.php'
           $('#content_web').load('layouts/m_siswa.php');
         }else if(menu == 'm_admin'){
           $('#content_web').load('layouts/m_admin.php');
+        }else if(menu == 'logout'){
+          $('#t').load('logout.php');
+          location.href = 'logout.php';
         }
   		});
   	});

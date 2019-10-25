@@ -59,6 +59,11 @@
 								<i class="fa fa-newspaper-o"></i> <span>Berita</span>
 							</a>
 						</li>
+						<li class="klik_menu" id="logout">
+							<a>
+								<i class="fa fa-sign-out"></i> <span>Logout</span>
+							</a>
+						</li>
 					</ul>
 				</section>
 				<!-- /.sidebar -->
